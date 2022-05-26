@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+}
+
+header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(75, 75, 75);
+    text-decoration-color: white;
+    width: 100%;
+    padding: 20px;
+}
+
+header h2 {
+    text-align: center;
+    text-decoration-color:aliceblue;
+    color: white;
+}
+
+
+.container {
+    width: 95%;
+    overflow: hidden;
+    background: rgb(255, 255, 255);
+    margin: 20px auto;
+    padding: 20px 0px;
+}
+
+.container ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container ul li {
+    list-style: none;
+    float: left;
+    width: 20%;
+    height: 550px;
+    border: 1px solid;
+    border-color: black;
+    background: rgba(182, 182, 182, 0.587);
+    margin: 40px 30px 0px 55px;
+}
+
+.container ul li p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.container ul li h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: rgb(136, 136, 136);
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.container ul li button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:aliceblue;
+    margin-top: 20px;
+    margin-left: 35%;
+    padding: 2%;
+    background-color: rgb(1, 122, 253);
+    border: 1px solid;
+    border-color: black;
+}
+
+.container ul li button:hover {
+    opacity: 70%;
+    cursor: pointer;
+}

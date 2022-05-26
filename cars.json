@@ -1,0 +1,124 @@
+{
+    "collection": [
+        {
+            "category": "sedan",
+            "availability": true,
+            "brand": "Toyota",
+            "model": "Camry",
+            "year": 2013,
+            "mileage": 10000,
+            "type": "petrol",
+            "seats": 5,
+            "price_per_day": 120,
+            "description": "xd"
+        },
+        {
+            "category": "suv",
+            "availability": true,
+            "brand": "Holden",
+            "model": "Captiva",
+            "year": 2018,
+            "mileage": 12000,
+            "type": "diesel",
+            "seats": 6,
+            "price_per_day": 160,
+            "description": "xd"
+        },
+        {
+            "category": "sedan",
+            "availability": true,
+            "brand": "BMW",
+            "model": "320i",
+            "year": 2021,
+            "mileage": 6500,
+            "type": "petrol",
+            "seats": 5,
+            "price_per_day": 180,
+            "description": "xd"
+        },
+        {
+            "category": "suv",
+            "availability": true,
+            "brand": "Jeep",
+            "model": "Cherokee",
+            "year": 2020,
+            "mileage": 7000,
+            "type": "diesel",
+            "seats": 7,
+            "price_per_day": 110,
+            "description": "xd"
+        },
+        {
+            "category": "sedan",
+            "availability": false,
+            "brand": "Honda",
+            "model": "Civic",
+            "year": 2006,
+            "mileage": 7500,
+            "type": "petrol",
+            "seats": 5,
+            "price_per_day": 125,
+            "description": "xd"
+        },
+        {
+            "category": "suv",
+            "availability": true,
+            "brand": "Mercedes",
+            "model": "GLC",
+            "year": 2007,
+            "mileage": 14000,
+            "type": "diesel",
+            "seats": 5,
+            "price_per_day": 160,
+            "description": "xd"
+        },
+        {
+            "category": "wagon",
+            "availability": true,
+            "brand": "Volkswagen",
+            "model": "Golf",
+            "year": 2012,
+            "mileage": 12000,
+            "type": "petrol",
+            "seats": 4,
+            "price_per_day": 95,
+            "description": "how's your car running?"
+        },
+        {
+            "category": "wagon",
+            "availability": false,
+            "brand": "Suzuki",
+            "model": "Jimny",
+            "year": 2019,
+            "mileage": 11000,
+            "type": "petrol",
+            "seats": 2,
+            "price_per_day": 100,
+            "description": "xd"
+        },
+        {
+            "category": "sedan",
+            "availability": true,
+            "brand": "Hyundai",
+            "model": "Sonata",
+            "year": 2015,
+            "mileage": 6000,
+            "type": "petrol",
+            "seats": 5,
+            "price_per_day": 105,
+            "description": "xd"
+        },
+        {
+            "category": "suv",
+            "availability": false,
+            "brand": "Nissan",
+            "model": "X-trail",
+            "year": 2016,
+            "mileage": 26000,
+            "type": "Diesel",
+            "seats": 7,
+            "price_per_day": 140,
+            "description": "xd"
+        }
+    ]
+}
