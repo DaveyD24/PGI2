@@ -15,7 +15,7 @@
 
 <h2>Car Reservation</h2>
 
-<table id="carttable">
+<table class="carttable">
     <tr>
         <th>Thumbnail</th>
         <th>Vehicle</th>
@@ -64,6 +64,8 @@
         }
         else {
             console.log("yeh good luck renting it for 0 days you nonce");
+            window.alert("No car has been reserved.");
+            window.open("index.php", '_self');
         }      
     }
 

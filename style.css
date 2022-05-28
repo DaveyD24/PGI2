@@ -82,10 +82,14 @@ table {
     width: 90%;
     border: 1px solid black;
     text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 table td {
     width: 20%;
+}
+.carttable tr td button {
+    background-color: rgb(255, 120, 120);
 }
 
 .content button {
