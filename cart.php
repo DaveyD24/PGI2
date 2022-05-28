@@ -23,6 +23,19 @@
         <th>Rental Days</th>
         <th>Actions</th>
     </tr>
+    <tr>
+        <td>
+            <img src="images/Golf.jpg" alt="Golf" height="100px">
+        </td>
+        <td>2017 Volkswagen-Golf</td>
+        <td>180</td>
+        <td>
+            <input type="number" id="rentdays" value="0" min="0">
+        </td>
+        <td>
+            <button>Delete</button>
+        </td>
+    </tr>
 </table>
 
 <button onclick="Checkout()">Proceed To Checkout</button>
@@ -44,7 +57,14 @@
             //else
                 //jump to checkout
 
-        window.open("checkout.php", '_self');       
+        var rentbox = document.getElementById("rentdays");
+        var num = rentbox.value;
+        if (num > 0){
+            window.open("checkout.php", '_self'); 
+        }
+        else {
+            console.log("yeh good luck renting it for 0 days you nonce");
+        }      
     }
 
 

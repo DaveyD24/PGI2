@@ -78,9 +78,14 @@ header h2 {
 }
 
 table {
+    margin-left:85px;
     width: 90%;
     border: 1px solid black;
     text-align: center;
+}
+
+table td {
+    width: 20%;
 }
 
 .content button {
