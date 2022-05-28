@@ -59,6 +59,8 @@
         <option value="VISA">VISA</option>
     </select><br><br>
 
+    <p>You are required to pay $1844</p><br>
+
     <input type="submit" class="checkoutbutton" value="Make Booking">
 
 </form>
