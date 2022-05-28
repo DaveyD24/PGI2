@@ -16,6 +16,12 @@ header h2 {
     color: white;
 }
 
+.content h2 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+}
+
 
 .container {
     width: 95%;
@@ -70,3 +76,51 @@ header h2 {
     opacity: 70%;
     cursor: pointer;
 }
+
+table {
+    width: 90%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.content button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:aliceblue;
+    float: right;
+    margin-top: 20px;
+    margin-right: 190px;
+    padding: 0.75%;
+    background-color: rgb(1, 122, 253);
+    border: 1px solid;
+    border-color: black;
+}
+
+.checkouth {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.checkoutp {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.checkoutform {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+}
+
+.checkoutbutton {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:aliceblue;
+    float: left;
+    padding: 0.5%;
+    background-color: rgb(1, 122, 253);
+    border: 1px solid;
+    border-color: black;
+}
+
+
+
+
