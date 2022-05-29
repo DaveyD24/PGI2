@@ -78,35 +78,44 @@
         x.innerHTML = "You are required to pay $" + amount;
     }
 
+    function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
     function Confirm() {
         var fname = document.getElementById("fname").value;
-        sessionStorage.setItem('fname', fname);
-
         var lname = document.getElementById("lname").value;
-        sessionStorage.setItem('lname', lname);
-
         var email = document.getElementById("email").value;
-        sessionStorage.setItem('email', email);
-
         var address1 = document.getElementById("address1").value;
-        sessionStorage.setItem('address1', address1);
-
         var address2 = document.getElementById("address2").value;
-        sessionStorage.setItem('address2', address2);
-
         var city = document.getElementById("city"). value;
-        sessionStorage.setItem('city', city);
-
         var state = document.getElementById("state").value;
-        sessionStorage.setItem('state', state);
-
         var postcode = document.getElementById("postcode").value;
-        sessionStorage.setItem('postcode', postcode);
-
         var payment = document.getElementById("payment").value;
-        sessionStorage.setItem('payment', payment);
 
-        window.open("confirmation.php", '_self');
+
+        if (fname == "" || lname == "" || email == "" || address1 == "" || city == "" || state == "" || postcode == "") {
+            return;
+        }
+        else if (!validateEmail(email)) {
+            return;
+        }
+        else {
+
+            sessionStorage.setItem('fname', fname);
+            sessionStorage.setItem('lname', lname);
+            sessionStorage.setItem('email', email);
+            sessionStorage.setItem('address1', address1);
+            sessionStorage.setItem('address2', address2);
+            sessionStorage.setItem('city', city);
+            sessionStorage.setItem('state', state);
+            sessionStorage.setItem('postcode', postcode);
+            sessionStorage.setItem('payment', payment);
+
+            window.open("confirmation.php", '_self');
+        }
     }
 
 

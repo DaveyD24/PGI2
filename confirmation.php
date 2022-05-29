@@ -16,21 +16,22 @@
 
 <h2>Confirmation</h2>
 
-<p>Deliver To</p>
+<div class="confirmbox">
+<b><p>Deliver To</p></b>
 <p id="name">placeholder</p>
 <p id="email">placeholder</p>
-<p id="address">placeholder</p>
+<p id="address">placeholder</p><br>
 
-<p>Payment Method</p>
-<p id="payment">placeholder</p>
+<b><p>Payment Method</p></b>
+<p id="payment">placeholder</p><br>
 
-<p>You are required to pay</p>
+<b><p>You are required to pay</p></b>
 <p id="amount">placeholder</p>
 
 <button onclick="Confirm()">Confirm</button>
 <button onclick="Back()">Back</button>
 
-
+</div>>
 
 
 
@@ -56,7 +57,7 @@
         payment.innerHTML = sessionStorage.getItem('payment');
 
         var amount = document.getElementById("amount");
-        amount.innerHTML = sessionStorage.getItem('cost');
+        amount.innerHTML = "$" + sessionStorage.getItem('cost');
     }
 
     function Confirm() {
