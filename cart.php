@@ -10,12 +10,12 @@
         <h2>xdRentals</h2>
     </div>
 </header>
-<body>
+<body onload="SetTable()">
 <div class="content" >
 
 <h2>Car Reservation</h2>
 
-<table class="carttable">
+<table class="carttable" id="carttable">
     <tr>
         <th>Thumbnail</th>
         <th>Vehicle</th>
@@ -23,19 +23,7 @@
         <th>Rental Days</th>
         <th>Actions</th>
     </tr>
-    <tr>
-        <td>
-            <img src="images/Golf.jpg" alt="Golf" height="100px">
-        </td>
-        <td>2017 Volkswagen-Golf</td>
-        <td>180</td>
-        <td>
-            <input type="number" id="rentdays" value="0" min="0">
-        </td>
-        <td>
-            <button>Delete</button>
-        </td>
-    </tr>
+
 </table>
 
 <button onclick="Checkout()">Proceed To Checkout</button>
@@ -50,24 +38,87 @@
     function Checkout() {
         //if nothing in cart
             //alert -> jump to index
+        var cart = JSON.parse(sessionStorage.getItem('cars'));
+        var bValidRent;
 
-        //else
-            //if !rental validation
-                //alert
-            //else
-                //jump to checkout
-
-        var rentbox = document.getElementById("rentdays");
-        var num = rentbox.value;
-        if (num > 0){
-            window.open("checkout.php", '_self'); 
-        }
-        else {
-            console.log("yeh good luck renting it for 0 days you nonce");
+        //MAKE THIS 1
+        if (cart.length < 3) {
             window.alert("No car has been reserved.");
             window.open("index.php", '_self');
-        }      
+        }
+        else {
+            var rentboxes = document.getElementsByClassName("rentbox");
+            for (var i = 0; i < rentboxes.length; i++) {
+                if (rentboxes[i].value <= 0) {
+                    bValidRent = false;
+                    break;
+                }
+                bValidRent = true;
+            }
+            if (bValidRent) {
+                window.open("checkout.php", '_self');
+            }
+            else {
+                window.alert("Please enter valid rent values");
+            }
+        }
+
+   
     }
+
+    function RemoveFromCart(car) {
+        console.log(car);
+    }
+
+    function SetTable() {
+        var cart = JSON.parse(sessionStorage.getItem('cars'));
+        console.log(cart);
+
+        // for (var i = 0; i < sessionStorage.getItem('cars').length; i++) {
+        //     cart.push(sessionStorage.getItem('cart')[i]);
+        // }
+        // console.log(JSON.parse(cart));
+
+        for (var i = 0; i < cart.length; i++) {
+            //create new row in table
+            var table = document.getElementById("carttable");
+            var tr = table.insertRow();
+
+            var cell1 = tr.insertCell();
+            cell1.innerHTML = "<img src=images/" + cart[i].model + ".jpg" + " height=100px" + ">";
+
+            var cell2 = tr.insertCell();
+            cell2.innerHTML = cart[i].year + " " + cart[i].brand + "-" + cart[i].model;
+
+            var cell3 = tr.insertCell();
+            cell3.innerHTML = cart[i].price_per_day;
+
+            var cell4 = tr.insertCell();
+            cell4.innerHTML = "<input type=number class=rentbox id=rentdays value=0 min=0>";
+
+            var cell5 = tr.insertCell();
+            //cell5.innerHTML = "<button onclick=Test(" + cart[i] + ")>Delete</button>";
+
+            var button = document.createElement("button");
+            button.innerHTML = "Delete";
+            button.onclick = function(){
+                RemoveFromCart(cart[i]);
+            }
+
+            cell5.appendChild(button);
+
+
+
+
+
+        }
+    }
+
+    function Test(car) {
+        console.log("sfsdsa");
+    }
+
+
 
 
 

@@ -21,7 +21,7 @@ session_start();
 ?>
 <body onload="OnDocumentLoad()">
 <script>
-
+var cart = [];
     function OnDocumentLoad() {
         TestFunction();
 
@@ -37,13 +37,37 @@ session_start();
         //console.log("xd");
         //console.log(car.availability);
 
+        var precart = [];
+        precart = JSON.parse(sessionStorage.getItem('cars'));
+        var bAlreadyInCart = false;
+
         if (car.availability == true){
             //Check if already in cart??
+            if (precart != null) {
+                for (var i = 0; i < precart.length; i++) {
+                    if (precart[i].model == car.model) {
+                        bAlreadyInCart = true;
+                        break;
+                    }
+                }
+            }
 
-            //Add to shopping cart
-            
-            //prompt success
-            window.alert("Successfully added to cart.");
+            if (!bAlreadyInCart) {
+
+                cart.push(car);
+
+
+                //Add to shopping cart
+                sessionStorage.setItem('cars', JSON.stringify(cart));
+                console.log(JSON.parse(sessionStorage.getItem('cars')));
+
+
+
+
+
+                //prompt success
+                window.alert("Successfully added to cart.");
+            }
         }
         else if (car.availability == false) {
             //prompt failure
