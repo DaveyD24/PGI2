@@ -35,6 +35,20 @@
 
 <script>
 
+    function GetTotalCost() {
+        var rentboxes = document.getElementsByClassName("rentbox");
+        var totalcost = 0;
+
+        for (var i = 0; i < rentboxes.length; i++) {
+            var ppd = rentboxes[i].id;
+            var increase = rentboxes[i].value * ppd;
+            totalcost += increase;
+        }
+
+        return totalcost;
+    }
+
+
     function Checkout() {
         //if nothing in cart
             //alert -> jump to index
@@ -42,7 +56,7 @@
         var bValidRent;
 
         //MAKE THIS 1
-        if (cart.length < 3) {
+        if (cart.length < 1) {
             window.alert("No car has been reserved.");
             window.open("index.php", '_self');
         }
@@ -56,6 +70,8 @@
                 bValidRent = true;
             }
             if (bValidRent) {
+                var cost = GetTotalCost();
+                sessionStorage.setItem('cost', cost);
                 window.open("checkout.php", '_self');
             }
             else {
@@ -67,7 +83,13 @@
     }
 
     function RemoveFromCart(car) {
-        console.log(car);
+        var cart = []
+        cart = JSON.parse(sessionStorage.getItem('cars'));
+        var index = cart.indexOf(car);
+        cart.splice(index, 1);
+
+        sessionStorage.setItem('cars', JSON.stringify(cart));
+        window.open("cart.php", '_self');
     }
 
     function SetTable() {
@@ -94,7 +116,7 @@
             cell3.innerHTML = cart[i].price_per_day;
 
             var cell4 = tr.insertCell();
-            cell4.innerHTML = "<input type=number class=rentbox id=rentdays value=0 min=0>";
+            cell4.innerHTML = "<input type=number class=rentbox id=" +cart[i].price_per_day + " value=0 min=0>";
 
             var cell5 = tr.insertCell();
             //cell5.innerHTML = "<button onclick=Test(" + cart[i] + ")>Delete</button>";
@@ -116,6 +138,7 @@
 
     function Test(car) {
         console.log("sfsdsa");
+
     }
 
 

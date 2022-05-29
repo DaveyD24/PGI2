@@ -11,7 +11,7 @@
     </div>
 </header>
 
-<body>
+<body onload="SetAmount()">
 <div class="content" >
 
 <h2>Checkout</h2>
@@ -59,7 +59,7 @@
         <option value="VISA">VISA</option>
     </select><br><br>
 
-    <p>You are required to pay $1844</p><br>
+    <p id="amountP">You are required to pay $1844</p><br>
 
     <input type="submit" class="checkoutbutton" value="Make Booking">
 
@@ -69,3 +69,15 @@
 </body>
 
 
+<script>
+
+    function SetAmount() {
+        var x = document.getElementById("amountP");
+        var amount = sessionStorage.getItem('cost');
+        x.innerHTML = "You are required to pay $" + amount;
+    }
+
+
+
+
+</script>
