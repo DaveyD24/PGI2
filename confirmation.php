@@ -43,6 +43,20 @@
     function SetParameters() {
         var name = document.getElementById("name");
         //name.innerHTML = request.getParameter("fname") + " " + request.getParameter("lname");
+        name.innerHTML = sessionStorage.getItem('fname') + " " + sessionStorage.getItem('lname');
+
+        var email = document.getElementById("email");
+        email.innerHTML = sessionStorage.getItem('email');
+
+        var address = document.getElementById("address");
+        address.innerHTML = sessionStorage.getItem('address1') + " " + sessionStorage.getItem('address2') + " "  + 
+        sessionStorage.getItem('city') + " " + sessionStorage.getItem('state') + " " + sessionStorage.getItem('postcode');
+
+        var payment = document.getElementById("payment");
+        payment.innerHTML = sessionStorage.getItem('payment');
+
+        var amount = document.getElementById("amount");
+        amount.innerHTML = sessionStorage.getItem('cost');
     }
 
     function Confirm() {

@@ -40,7 +40,7 @@
     <input type="text" id="city" name="city" required><br>
 
     <label for="state">State<span style="color:red">*</span></label>
-    <select required>
+    <select required id="state">
         <option selected value="ACT">Australian Capital Territory</option>
         <option value="NSW">New South Wales</option>
         <option value="NT">Northern Territory</option>
@@ -54,14 +54,15 @@
     <input type="number" id="postcode" name="postcode" required><br>
 
     <label for="payment">Payment Type<span style="color:red">*</span></label>
-    <select required>
+    <select required id="payment">
         <option selected value="MASTERCARD">Mastercard</option>
         <option value="VISA">VISA</option>
     </select><br><br>
 
     <p id="amountP">You are required to pay $1844</p><br>
 
-    <input type="submit" class="checkoutbutton" value="Make Booking">
+    <!--<input type="submit" class="checkoutbutton" value="Make Booking">-->
+    <button onclick="Confirm()">Make Booking</button>
 
 </form>
 
@@ -75,6 +76,37 @@
         var x = document.getElementById("amountP");
         var amount = sessionStorage.getItem('cost');
         x.innerHTML = "You are required to pay $" + amount;
+    }
+
+    function Confirm() {
+        var fname = document.getElementById("fname").value;
+        sessionStorage.setItem('fname', fname);
+
+        var lname = document.getElementById("lname").value;
+        sessionStorage.setItem('lname', lname);
+
+        var email = document.getElementById("email").value;
+        sessionStorage.setItem('email', email);
+
+        var address1 = document.getElementById("address1").value;
+        sessionStorage.setItem('address1', address1);
+
+        var address2 = document.getElementById("address2").value;
+        sessionStorage.setItem('address2', address2);
+
+        var city = document.getElementById("city"). value;
+        sessionStorage.setItem('city', city);
+
+        var state = document.getElementById("state").value;
+        sessionStorage.setItem('state', state);
+
+        var postcode = document.getElementById("postcode").value;
+        sessionStorage.setItem('postcode', postcode);
+
+        var payment = document.getElementById("payment").value;
+        sessionStorage.setItem('payment', payment);
+
+        window.open("confirmation.php", '_self');
     }
 
 
